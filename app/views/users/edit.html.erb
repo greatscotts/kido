@@ -1,0 +1,20 @@
+<% provide(:title, "Edit user") %>
+<h1>Create your Class</h1>
+
+<div class="row">
+
+  <div class="span8 offset2">
+  	<center>
+  	<%= image_tag avatarzz_url current_user, :size=> 50  %>
+  </br>
+    <a href="http://gravatar.com/emails">Change Photo</a>
+    </center>
+    <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages', :object=> f.object %>
+      <%= render 'edit_fields', :f => f %>
+      <%= f.submit "Update", :class=> "btn btn-large btn-primary" %>
+    <% end %>
+
+    
+  </div>
+</div>

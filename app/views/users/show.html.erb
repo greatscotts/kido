@@ -1,0 +1,39 @@
+<% provide(:title, @user.username) %>
+<body class="responsive">
+<div class="span11">
+<h1>
+    <center><%= image_tag avatar_url @user, :size=> 50  %></center>
+    <center><%= @user.status %></center>
+</h1>
+
+<h3>
+<center class="status">
+  <a href="<%= admirers_user_path(@user) %>">
+    <strong id="followers" class="stat">
+      <%= @user.followers.count %>
+    </strong>
+    Enrolled Students
+  </a>
+</center>
+</h3>
+<center>
+<section class="btnfllow"><%= render "follow_form" %></section>
+</center>
+</br>
+<section class="left">
+<algnleft><b>Professor:</b> <%= @user.name %></algnleft></br>
+<algnleft><b>Time:</b> <%= @user.school %></algnleft></br>  
+<algnleft><b>Course Description:</b> <%= @user.location %></p></algnleft>
+</section>
+</br>
+</div>
+<div class="span8 bottom">
+  <% if @user.microposts.any? %>
+    <h3><k>Wall Feed (<%= @user.microposts.count %>)</k></h3>
+    <ol class="microposts span6">
+      <%= render @microposts %>
+    </ol>
+  <% end %>
+</div>
+</div>
+</body>
