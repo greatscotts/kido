@@ -1,19 +1,7 @@
 <% provide(:title, @title) %>
+<body class="responsive">
 <div class="row">
-  <aside class="span4">
-    <center>
-    <section>
-      <%= image_tag avatarzz_url @user %>
-      <h1><center><%= @user.username %></center></h1>
-      <span><%= link_to "view profile", @user %></span>
-    </section>
-  </center>
-  <section>
-    <%= render 'shared/stats' %>
-  </section>
-  </aside>
-  <center class="middle">
-  <div class="span7">
+  <div class="span7 offset5 padding">
     <h3><%= @title %></h3>
     <% if @users.any? %>
       <ul class="users">
@@ -22,5 +10,5 @@
       <%= will_paginate %>
     <% end %>
   </div>
-</center>
 </div>
+</body>
